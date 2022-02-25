@@ -42,3 +42,6 @@ vscode:
     - redhat.vscode-yaml
     - ikuyadeu.r
     - randomfractalsinc.vscode-data-preview
+
+image:
+  file: .gitpod.Dockerfile
