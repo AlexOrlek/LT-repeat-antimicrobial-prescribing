@@ -1,8 +1,6 @@
-from cohortextractor import StudyDefinition, patients, codelist, codelist_from_csv  # NOQA
+from cohortextractor import Measure, StudyDefinition, patients, codelist, codelist_from_csv  # NOQA
 import pandas as pd
 
-
-# define codelists
 antibacterial_codes = codelist_from_csv(
     "codelists/opensafely-antibacterials.csv", system="snomed", column="dmd_id",
 )
@@ -15,35 +13,8 @@ acne_codes = codelist_from_csv(
     "codelists-local/alexorlek-acne-59444b72.csv", system="snomed", column="code"
 )
 
-# dictionary of STPs
 STPs = pd.read_csv(filepath_or_buffer="input-data/STPs.csv")
 dict_stp = {stp: 1 / len(STPs.index) for stp in STPs["stp_id"].tolist()}
-
-
-# create variable for each code in antibacterial codelist
-def loop_over_codes(code_list):
-
-    def make_variable(code):
-        return {
-            f"count_{code}": (
-                patients.with_these_clinical_events(
-                    codelist([code], system="snomed"),
-                    between = ["index_date - 6 months", "index_date"],
-                    returning = "number_of_episodes",
-                    episode_defined_as = "series of events each <= 28 days apart",
-                    return_expectations={
-                        "int": {"distribution": "normal", "mean": 2, "stddev": 1},
-                        "incidence": 0.2,
-                    },
-                )
-            )
-        }
-
-    variables = {}
-    for code in code_list:
-        variables.update(make_variable(code))
-    return variables
-
 
 
 study = StudyDefinition(
@@ -120,21 +91,6 @@ study = StudyDefinition(
         return_expectations = {"incidence": 0.5}  # 50% care home residency
     ),
 
-     # comorbidities
-    has_copd = patients.with_these_clinical_events(
-        copd_codes,
-        on_or_before = "index_date",
-        return_expectations = {"incidence": 0.5}
-    ),
-
-    # indications
-    has_acne = patients.with_these_clinical_events(
-        acne_codes,
-        between = ["index_date - 6 months", "index_date"],
-        return_expectations = {"incidence": 0.5}
-    ),
-
-
     # antibiotic prescribing
     amr_6_months = patients.with_these_medications(
         antibacterial_codes,
@@ -147,5 +103,39 @@ study = StudyDefinition(
         },
     ),
 
-    **loop_over_codes(antibacterial_codes),
+     # comorbidities
+    has_copd = patients.with_these_clinical_events(
+        copd_codes,
+        on_or_before = "index_date",
+        return_expectations = {"incidence": 0.5}
+    ),
+
+    # indications
+    has_acne = patients.with_these_clinical_events(
+        acne_codes,
+        between = ["index_date - 6 months", "index_date"],
+        return_expectations = {"incidence": 0.5}
+    )
 )
+
+# MEASURES
+# proportion of population receiving long-term repeat prescriptions
+measures = [
+    Measure(
+        id="prescribing",
+        numerator="amr_6_months",
+        denominator="population",
+    ),
+    Measure(
+        id="prescribing_stp",
+        numerator="amr_6_months",
+        denominator="population",
+        group_by="stp",
+    ),
+    Measure(
+        id="prescribing_region",
+        numerator="amr_6_months",
+        denominator="population",
+        group_by="region",
+    ),
+]
