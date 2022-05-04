@@ -76,6 +76,7 @@ study = StudyDefinition(
         antibacterial_codes,
         between = ["index_date - 6 months", "index_date"],
         find_first_match_in_period = True,
+        date_format="YYYY-MM-DD",
         returning = "date",
         return_expectations = {
             "date": {"earliest": "index_date - 6 months", "latest": "index_date"}
