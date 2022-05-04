@@ -203,6 +203,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         find_first_match_in_period = True,
         returning = "date",
+        date_format="YYYY-MM-DD",
         return_expectations = {
             "date": {"earliest": "index_date - 6 months", "latest": "index_date"}
         },
@@ -218,7 +219,7 @@ study = StudyDefinition(
     # indications
     has_acne = patients.with_these_clinical_events(
         acne_codes,
-        between = ["index_date - 6 months", "index_date"],
+        between = ["amr_6_months_first_match - 6 months", "amr_6_months_first_match"],
         return_expectations = {"incidence": 0.5}
     ),
 
