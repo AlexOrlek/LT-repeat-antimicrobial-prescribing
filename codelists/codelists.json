@@ -17,6 +17,12 @@
       "url": "https://codelists.opensafely.org/codelist/opensafely/antibacterials/27089eaa/",
       "downloaded_at": "2022-04-26 13:38:19.048636Z",
       "sha": "f3c280d89cff832ee287f1b66a5042794f2fda27"
+    },
+    "user-alexorlek-acne.csv": {
+      "id": "user/alexorlek/acne/59444b72",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/acne/59444b72/",
+      "downloaded_at": "2022-05-03 23:47:23.217393Z",
+      "sha": "072c91b48953bd976f422651e84452df80b02072"
     }
   }
 }
