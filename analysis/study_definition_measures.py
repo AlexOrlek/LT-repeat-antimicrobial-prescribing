@@ -1,18 +1,9 @@
-from cohortextractor import Measure, StudyDefinition, patients, codelist, codelist_from_csv  # NOQA
+from cohortextractor import Measure, StudyDefinition, patients, codelist
+from codelists import *
 import pandas as pd
 
-antibacterial_codes = codelist_from_csv(
-    "codelists/opensafely-antibacterials.csv", system="snomed", column="dmd_id",
-)
 
-copd_codes = codelist_from_csv(
-    "codelists/opensafely-current-copd.csv", system="ctv3", column="CTV3ID"
-)
-
-acne_codes = codelist_from_csv(
-    "codelists-local/alexorlek-acne-59444b72.csv", system="snomed", column="code"
-)
-
+# dictionary of STPs
 STPs = pd.read_csv(filepath_or_buffer="input-data/STPs.csv")
 dict_stp = {stp: 1 / len(STPs.index) for stp in STPs["stp_id"].tolist()}
 
@@ -48,6 +39,7 @@ study = StudyDefinition(
     ),
 
     # VARIABLES
+    # demographics
     age = patients.age_as_of(
         "index_date",
         return_expectations = {
@@ -61,23 +53,6 @@ study = StudyDefinition(
         }
     ),
 
-    region = patients.registered_practice_as_of(
-        "index_date",
-        returning = "nuts1_region_name",
-        return_expectations = {
-            "category": {"ratios": {
-                "North East": 0.1,
-                "North West": 0.1,
-                "Yorkshire and the Humber": 0.1,
-                "East Midlands": 0.1,
-                "West Midlands": 0.1,
-                "East of England": 0.1,
-                "London": 0.2,
-                "South East": 0.2}
-            }
-        }
-    ),
-
     stp = patients.registered_practice_as_of(
         "index_date",
         returning = "stp_code",
@@ -86,21 +61,31 @@ study = StudyDefinition(
         },
     ),
 
-    care_home = patients.care_home_status_as_of(
-        "index_date",
-        return_expectations = {"incidence": 0.5}  # 50% care home residency
-    ),
-
-    # antibiotic prescribing
+     # antibiotic prescribing
     amr_6_months = patients.with_these_medications(
         antibacterial_codes,
         between = ["index_date - 6 months", "index_date"],
-        returning = "number_of_episodes",
-        episode_defined_as = "series of events each <= 28 days apart",
+        returning = "number_of_matches_in_period",
         return_expectations = {
             "int": {"distribution": "normal", "mean": 2, "stddev": 1},
             "incidence": 0.2,
         },
+    ),
+
+    amr_6_months_first_match = patients.with_these_medications(
+        antibacterial_codes,
+        between = ["index_date - 6 months", "index_date"],
+        find_first_match_in_period = True,
+        returning = "date",
+        return_expectations = {
+            "date": {"earliest": "index_date - 6 months", "latest": "index_date"}
+        },
+    ),
+
+    amr_6_months_binary = patients.satisfying(
+        """
+        (amr_6_months >= 3)
+        """,
     ),
 
      # comorbidities
@@ -115,7 +100,8 @@ study = StudyDefinition(
         acne_codes,
         between = ["index_date - 6 months", "index_date"],
         return_expectations = {"incidence": 0.5}
-    )
+    ),
+
 )
 
 # MEASURES
@@ -123,19 +109,13 @@ study = StudyDefinition(
 measures = [
     Measure(
         id="prescribing",
-        numerator="amr_6_months",
+        numerator="amr_6_months_binary",
         denominator="population",
     ),
     Measure(
         id="prescribing_stp",
-        numerator="amr_6_months",
+        numerator="amr_6_months_binary",
         denominator="population",
         group_by="stp",
-    ),
-    Measure(
-        id="prescribing_region",
-        numerator="amr_6_months",
-        denominator="population",
-        group_by="region",
     ),
 ]
