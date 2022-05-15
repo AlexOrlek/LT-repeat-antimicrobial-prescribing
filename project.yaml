@@ -10,3 +10,24 @@ actions:
     outputs:
       highly_sensitive:
         cohort: output/input.csv
+
+  describe:
+    run: r:latest analysis/cohort_report.R
+    needs: [generate_study_population]
+    outputs:
+      moderately_sensitive:
+        figure: output/age_distribution.pdf
+
+
+  generate_measure_populations:
+    run: cohortextractor:latest generate_cohort --study-definition study_definition_measures --index-date-range "2020-01-01 to 2020-09-01 by month" --output-dir=output/measures
+    outputs:
+      highly_sensitive:
+        cohort: output/measures/input_*.csv
+
+  generate_measures:
+    run: cohortextractor:latest generate_measures --study-definition study_definition_measures --output-dir=output/measures
+    needs: [generate_measure_populations]
+    outputs:
+      moderately_sensitive:
+        measure_csv: output/measures/measure_*.csv
