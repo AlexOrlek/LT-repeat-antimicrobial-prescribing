@@ -1,15 +1,102 @@
-from cohortextractor import codelist, codelist_from_csv
+from os import system
+from cohortextractor import codelist, codelist_from_csv, combine_codelists
 
 
-# define codelists
-antibacterial_codes = codelist_from_csv(
-    "codelists/opensafely-antibacterials.csv", system="snomed", column="dmd_id",
+# DEFINE CODELISTS
+
+# antibacterial codes
+# antibacterial_codes = codelist_from_csv(
+#     "codelists/opensafely-antibacterials.csv", system="snomed", column="dmd_id",
+# )
+
+aminoglycosides_codes = codelist_from_csv(
+    "codelists/user-alexorlek-aminoglycosides-antibacterials.csv", system="snomed", column="dmd_id"
 )
 
+antileprotic_drugs_codes = codelist_from_csv(
+    "codelists/user-alexorlek-antileprotic-drugs-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+antituberculosis_drugs_codes = codelist_from_csv(
+    "codelists/user-alexorlek-antituberculosis-drugs-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+cephalosporins_and_other_beta_lactams_codes = codelist_from_csv(
+    "codelists/user-alexorlek-cephalosporins-and-other-beta-lactams-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+clindamycin_and_lincomycin_codes = codelist_from_csv(
+    "codelists/user-alexorlek-clindamycin-and-lincomycin-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+macrolides_codes = codelist_from_csv(
+    "codelists/user-alexorlek-macrolides-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+metronidazole_tinidazole_and_ornidazole_codes = codelist_from_csv(
+    "codelists/user-alexorlek-metronidazole-tinidazole-and-ornidazole-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+penicillins_codes = codelist_from_csv(
+    "codelists/user-alexorlek-penicillins-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+quinolones_codes = codelist_from_csv(
+    "codelists/user-alexorlek-quinolones-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+some_other_antibacterials_codes = codelist_from_csv(
+    "codelists/user-alexorlek-some-other-antibacterials-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+sulfonamides_and_trimethoprim_codes = codelist_from_csv(
+    "codelists/user-alexorlek-sulfonamides-and-trimethoprim-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+tetracyclines_codes = codelist_from_csv(
+    "codelists/user-alexorlek-tetracyclines-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+urinary_tract_infections_codes = codelist_from_csv(
+    "codelists/user-alexorlek-urinary-tract-infections-antibacterials.csv", system="snomed", column="dmd_id"
+)
+
+antibacterial_codes = combine_codelists(
+    aminoglycosides_codes,
+    antileprotic_drugs_codes,
+    antituberculosis_drugs_codes,
+    cephalosporins_and_other_beta_lactams_codes,
+    clindamycin_and_lincomycin_codes,
+    macrolides_codes,
+    metronidazole_tinidazole_and_ornidazole_codes,
+    penicillins_codes,
+    quinolones_codes,
+    some_other_antibacterials_codes,
+    sulfonamides_and_trimethoprim_codes,
+    tetracyclines_codes,
+    urinary_tract_infections_codes
+)
+
+# demographic codes
+ethnicity_codes = codelist_from_csv(
+    "codelists/opensafely-ethnicity.csv", system="ctv3", column="Code", category_column="Grouping_16"
+)
+
+
+# comorbidity codes
 copd_codes = codelist_from_csv(
     "codelists/opensafely-current-copd.csv", system="ctv3", column="CTV3ID"
 )
 
+sickle_cell_codes = codelist_from_csv(
+    "codelists/opensafely-sickle-cell-disease.csv", system="ctv3", column="CTV3ID"
+)
+
+# indication codes
 acne_codes = codelist_from_csv(
     "codelists/user-alexorlek-acne.csv", system="snomed", column="code"
+)
+
+copd_infection_codes = codelist_from_csv(
+    "codelists/opensafely-copd-infection.csv", system="ctv3", column="CTV3ID"
 )
