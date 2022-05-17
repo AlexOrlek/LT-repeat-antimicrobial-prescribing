@@ -96,10 +96,22 @@ study = StudyDefinition(
         return_expectations = {"incidence": 0.5}
     ),
 
+    has_sickle_cell = patients.with_these_clinical_events(
+        sickle_cell_codes,
+        on_or_before = "index_date",
+        return_expectations = {"incidence": 0.5}
+    ),
+
     # indications
     has_acne = patients.with_these_clinical_events(
         acne_codes,
-        between = ["index_date - 6 months", "index_date"],
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        return_expectations = {"incidence": 0.5}
+    ),
+
+    has_copd_infection = patients.with_these_clinical_events(
+        copd_infection_codes,
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
@@ -109,14 +121,15 @@ study = StudyDefinition(
 # proportion of population receiving long-term repeat prescriptions
 measures = [
     Measure(
-        id="prescribing",
-        numerator="amr_6_months_binary",
-        denominator="population",
+        id = "prescribing",
+        numerator = "amr_6_months_binary",
+        denominator = "population",
+        group_by = "population"
     ),
     Measure(
-        id="prescribing_stp",
-        numerator="amr_6_months_binary",
-        denominator="population",
-        group_by="stp",
+        id = "prescribing_stp",
+        numerator = "amr_6_months_binary",
+        denominator = "population",
+        group_by = "stp",
     ),
 ]
