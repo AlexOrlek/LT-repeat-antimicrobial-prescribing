@@ -1,10 +1,88 @@
 {
   "files": {
-    "opensafely-asthma-inhaler-steroid-medication.csv": {
-      "id": "opensafely/asthma-inhaler-steroid-medication/2020-04-15",
-      "url": "https://codelists.opensafely.org/codelist/opensafely/asthma-inhaler-steroid-medication/2020-04-15/",
-      "downloaded_at": "2022-04-19 07:14:56.964174Z",
-      "sha": "d184aff205a5017c9e656d2be7484e3aaadc9cda"
+    "user-alexorlek-aminoglycosides-antibacterials.csv": {
+      "id": "user/alexorlek/aminoglycosides-antibacterials/5376bd40",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/aminoglycosides-antibacterials/5376bd40/",
+      "downloaded_at": "2022-05-17 13:15:22.549183Z",
+      "sha": "b9ed42e5322041094969431641515e80a92944ef"
+    },
+    "user-alexorlek-antileprotic-drugs-antibacterials.csv": {
+      "id": "user/alexorlek/antileprotic-drugs-antibacterials/3a674a0b",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/antileprotic-drugs-antibacterials/3a674a0b/",
+      "downloaded_at": "2022-05-17 13:15:22.691179Z",
+      "sha": "13e902ebe68424d9b64c71f5c7d9bf7c9d6d17ae"
+    },
+    "user-alexorlek-antituberculosis-drugs-antibacterials.csv": {
+      "id": "user/alexorlek/antituberculosis-drugs-antibacterials/7817e3dc",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/antituberculosis-drugs-antibacterials/7817e3dc/",
+      "downloaded_at": "2022-05-16 08:34:38.917068Z",
+      "sha": "0139532c0f81cb2c0d6247b96a745a0ec7c57714"
+    },
+    "user-alexorlek-cephalosporins-and-other-beta-lactams-antibacterials.csv": {
+      "id": "user/alexorlek/cephalosporins-and-other-beta-lactams-antibacterials/7d7d63c8",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/cephalosporins-and-other-beta-lactams-antibacterials/7d7d63c8/",
+      "downloaded_at": "2022-05-16 16:21:54.061282Z",
+      "sha": "60033fa292554978be22eb8fd223537c3cdf75f6"
+    },
+    "user-alexorlek-clindamycin-and-lincomycin-antibacterials.csv": {
+      "id": "user/alexorlek/clindamycin-and-lincomycin-antibacterials/646df093",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/clindamycin-and-lincomycin-antibacterials/646df093/",
+      "downloaded_at": "2022-05-16 16:21:54.278454Z",
+      "sha": "2d03f25ba128c2043b72b4834feb406d8375c883"
+    },
+    "user-alexorlek-macrolides-antibacterials.csv": {
+      "id": "user/alexorlek/macrolides-antibacterials/4b5e7d5e",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/macrolides-antibacterials/4b5e7d5e/",
+      "downloaded_at": "2022-05-16 16:21:54.506507Z",
+      "sha": "895da4e36081ce65580543eb14a49bec98a07d53"
+    },
+    "user-alexorlek-metronidazole-tinidazole-and-ornidazole-antibacterials.csv": {
+      "id": "user/alexorlek/metronidazole-tinidazole-and-ornidazole-antibacterials/193f96f4",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/metronidazole-tinidazole-and-ornidazole-antibacterials/193f96f4/",
+      "downloaded_at": "2022-05-16 16:21:54.679062Z",
+      "sha": "a558b30e2aaf9b87be9418f2395613363a6c9671"
+    },
+    "user-alexorlek-penicillins-antibacterials.csv": {
+      "id": "user/alexorlek/penicillins-antibacterials/324f0a29",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/penicillins-antibacterials/324f0a29/",
+      "downloaded_at": "2022-05-16 16:21:54.891707Z",
+      "sha": "430d3efad25aef503745f425352aabe95560a2d6"
+    },
+    "user-alexorlek-quinolones-antibacterials.csv": {
+      "id": "user/alexorlek/quinolones-antibacterials/003023bf",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/quinolones-antibacterials/003023bf/",
+      "downloaded_at": "2022-05-16 16:21:55.081030Z",
+      "sha": "474e06c7252771fee969568250905298e2133ff1"
+    },
+    "user-alexorlek-some-other-antibacterials-antibacterials.csv": {
+      "id": "user/alexorlek/some-other-antibacterials-antibacterials/6720b089",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/some-other-antibacterials-antibacterials/6720b089/",
+      "downloaded_at": "2022-05-16 16:21:55.301698Z",
+      "sha": "598665022948eca8afc9eb31a1d12399bf1086d2"
+    },
+    "user-alexorlek-sulfonamides-and-trimethoprim-antibacterials.csv": {
+      "id": "user/alexorlek/sulfonamides-and-trimethoprim-antibacterials/4e113d54",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/sulfonamides-and-trimethoprim-antibacterials/4e113d54/",
+      "downloaded_at": "2022-05-16 16:21:55.515679Z",
+      "sha": "9017e7da151d0f8ea667cf4ab6ccc348dab84b0f"
+    },
+    "user-alexorlek-tetracyclines-antibacterials.csv": {
+      "id": "user/alexorlek/tetracyclines-antibacterials/3501ca1f",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/tetracyclines-antibacterials/3501ca1f/",
+      "downloaded_at": "2022-05-17 13:41:30.872061Z",
+      "sha": "9460ab95f660d1931fe026b551b8247e03dc88b1"
+    },
+    "user-alexorlek-urinary-tract-infections-antibacterials.csv": {
+      "id": "user/alexorlek/urinary-tract-infections-antibacterials/1bf256ea",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/urinary-tract-infections-antibacterials/1bf256ea/",
+      "downloaded_at": "2022-05-16 16:21:55.808126Z",
+      "sha": "ea5c847c63f0e19eb56d438291921154e02139c9"
+    },
+    "opensafely-ethnicity.csv": {
+      "id": "opensafely/ethnicity/2020-04-27",
+      "url": "https://codelists.opensafely.org/codelist/opensafely/ethnicity/2020-04-27/",
+      "downloaded_at": "2022-05-15 15:20:14.016732Z",
+      "sha": "3d2f3998b71863a80b24d60f6f4282e14191ae13"
     },
     "opensafely-current-copd.csv": {
       "id": "opensafely/current-copd/2020-05-06",
@@ -12,11 +90,17 @@
       "downloaded_at": "2022-04-19 07:26:50.190235Z",
       "sha": "bab838b50e256ceef8b9d2f6ca1132491e522bda"
     },
-    "opensafely-antibacterials.csv": {
-      "id": "opensafely/antibacterials/27089eaa",
-      "url": "https://codelists.opensafely.org/codelist/opensafely/antibacterials/27089eaa/",
-      "downloaded_at": "2022-04-26 13:38:19.048636Z",
-      "sha": "f3c280d89cff832ee287f1b66a5042794f2fda27"
+    "opensafely-sickle-cell-disease.csv": {
+      "id": "opensafely/sickle-cell-disease/2020-04-14",
+      "url": "https://codelists.opensafely.org/codelist/opensafely/sickle-cell-disease/2020-04-14/",
+      "downloaded_at": "2022-05-17 15:02:30.679640Z",
+      "sha": "c30644d91b2c23e805f1ad6b723c30d1f4cc2191"
+    },
+    "opensafely-copd-infection.csv": {
+      "id": "opensafely/copd-infection/2020-05-16",
+      "url": "https://codelists.opensafely.org/codelist/opensafely/copd-infection/2020-05-16/",
+      "downloaded_at": "2022-05-17 14:49:26.472068Z",
+      "sha": "287c5ff96a71a97dfb9e59d42bac941eb3e51743"
     },
     "user-alexorlek-acne.csv": {
       "id": "user/alexorlek/acne/59444b72",
