@@ -81,7 +81,7 @@
     "opensafely-ethnicity.csv": {
       "id": "opensafely/ethnicity/2020-04-27",
       "url": "https://codelists.opensafely.org/codelist/opensafely/ethnicity/2020-04-27/",
-      "downloaded_at": "2022-05-15 15:20:14.016732Z",
+      "downloaded_at": "2022-05-23 16:17:54.801530Z",
       "sha": "3d2f3998b71863a80b24d60f6f4282e14191ae13"
     },
     "opensafely-current-copd.csv": {
@@ -90,11 +90,11 @@
       "downloaded_at": "2022-04-19 07:26:50.190235Z",
       "sha": "bab838b50e256ceef8b9d2f6ca1132491e522bda"
     },
-    "opensafely-sickle-cell-disease.csv": {
-      "id": "opensafely/sickle-cell-disease/2020-04-14",
-      "url": "https://codelists.opensafely.org/codelist/opensafely/sickle-cell-disease/2020-04-14/",
-      "downloaded_at": "2022-05-17 15:02:30.679640Z",
-      "sha": "c30644d91b2c23e805f1ad6b723c30d1f4cc2191"
+    "opensafely-sickle-cell-disease-snomed.csv": {
+      "id": "opensafely/sickle-cell-disease-snomed/2020-04-14",
+      "url": "https://codelists.opensafely.org/codelist/opensafely/sickle-cell-disease-snomed/2020-04-14/",
+      "downloaded_at": "2022-05-23 15:31:30.059251Z",
+      "sha": "b004055087ab7e1c0381114eecb5cc7e7a1084d0"
     },
     "opensafely-copd-infection.csv": {
       "id": "opensafely/copd-infection/2020-05-16",

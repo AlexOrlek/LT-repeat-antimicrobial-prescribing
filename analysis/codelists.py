@@ -89,7 +89,7 @@ copd_codes = codelist_from_csv(
 )
 
 sickle_cell_codes = codelist_from_csv(
-    "codelists/opensafely-sickle-cell-disease.csv", system="ctv3", column="CTV3ID"
+    "codelists/opensafely-sickle-cell-disease-snomed.csv", system="snomed", column="id"
 )
 
 # indication codes

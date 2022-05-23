@@ -13,6 +13,6 @@ user/alexorlek/tetracyclines-antibacterials/3501ca1f
 user/alexorlek/urinary-tract-infections-antibacterials/1bf256ea
 opensafely/ethnicity/2020-04-27
 opensafely/current-copd/2020-05-06
-opensafely/sickle-cell-disease/2020-04-14
+opensafely/sickle-cell-disease-snomed/2020-04-14
 opensafely/copd-infection/2020-05-16
 user/alexorlek/acne/59444b72
