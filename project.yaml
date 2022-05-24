@@ -24,20 +24,20 @@ actions:
     needs: [generate_study_population_precovid]
     outputs:
       moderately_sensitive:
-        lt_repeat_prop_table: output/lt_repeat_prop_2020-01-01.csv
-        age_dist_figure: output/age_distribution_2020-01-01.pdf
+        lt_repeat_prop_table: output/n_lt_repeat_2020-01-01.csv
+        age_dist_figure: output/demographic_pyramid_2020-01-01.pdf
 
   describe_covid:
     run: r:latest analysis/cohort_report.R 2021-01-01
     needs: [generate_study_population_covid]
     outputs:
       moderately_sensitive:
-        lt_repeat_prop_table: output/lt_repeat_prop_2021-01-01.csv
-        age_dist_figure: output/age_distribution_2021-01-01.pdf
+        lt_repeat_prop_table: output/n_lt_repeat_2021-01-01.csv
+        age_dist_figure: output/demographic_pyramid_2021-01-01.pdf
 
   # generate measures
   generate_measure_populations:
-    run: cohortextractor:latest generate_cohort --study-definition study_definition_measures --index-date-range "2020-01-01 to 2020-09-01 by month" --output-dir=output/measures
+    run: cohortextractor:latest generate_cohort --study-definition study_definition_measures --index-date-range "2020-01-01 to 2022-01-01 by month" --output-dir=output/measures
     outputs:
       highly_sensitive:
         cohort: output/measures/input_*.csv
