@@ -25,7 +25,7 @@ actions:
     outputs:
       moderately_sensitive:
         lt_repeat_prop_table: output/n_lt_repeat_2020-01-01.csv
-        age_dist_figure: output/demographic_pyramid_2020-01-01.pdf
+        age_dist_figure: output/demographic_pyramid_2020-01-01.png
 
   describe_covid:
     run: r:latest analysis/cohort_report.R 2021-01-01
@@ -33,7 +33,7 @@ actions:
     outputs:
       moderately_sensitive:
         lt_repeat_prop_table: output/n_lt_repeat_2021-01-01.csv
-        age_dist_figure: output/demographic_pyramid_2021-01-01.pdf
+        age_dist_figure: output/demographic_pyramid_2021-01-01.png
 
   # generate measures
   generate_measure_populations:

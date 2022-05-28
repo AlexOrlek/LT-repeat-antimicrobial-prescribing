@@ -8,7 +8,7 @@ cohort_df <- read.csv(here::here("output", gsub("%s", cohort_date, "input_%s.csv
 
 # filter for LT-repeat and count population
 n_total <- nrow(cohort_df)
-cohort_df <- cohort_df %>% filter(amr_6_months > 0)
+cohort_df <- cohort_df %>% filter(amr_6_months >= 3)
 n_lt_repeat <- nrow(cohort_df)
 n_lt_repeat_df <- data.frame('n_total' = n_total, 'n_lt_repeat' = n_lt_repeat)
 write.csv(n_lt_repeat_df, here::here("output", gsub("%s", cohort_date, "n_lt_repeat_%s.csv")), col.names = TRUE, row.names = FALSE)
@@ -36,4 +36,4 @@ p_age_sex <- ggplot() + geom_col(data = age_sex_df, mapping = aes(x = age_cat, y
   coord_flip() +  # flip the X and Y axes to make pyramid vertical
   theme_bw() + scale_y_continuous(label = as_labeller(function(x) abs(as.numeric(x)))) +
   labs(x = "Age group", y = "Number of patients by age/sex", fill = NULL, caption = str_c('Total N = ',n_age_sex))
-ggsave(plot = p_age_sex, filename = gsub("%s", cohort_date, "demographic_pyramid_%s.pdf"), path = here::here("output"), device = "pdf")
+ggsave(plot = p_age_sex, filename = gsub("%s", cohort_date, "demographic_pyramid_%s.png"), path = here::here("output"), device = "png")
