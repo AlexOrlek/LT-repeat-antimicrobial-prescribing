@@ -100,3 +100,15 @@ acne_codes = codelist_from_csv(
 copd_infection_codes = codelist_from_csv(
     "codelists/opensafely-copd-infection.csv", system="ctv3", column="CTV3ID"
 )
+
+otitis_media_codes = codelist_from_csv(
+    "codelists/user-alexorlek-otitis-media.csv", system="snomed", column="code"
+)
+
+splenectomy_codes = codelist_from_csv(
+    "codelists/user-alexorlek-splenectomy.csv", system="snomed", column="code"
+)
+
+uti_codes = codelist_from_csv(
+    "codelists/user-alexorlek-urinary-tract-infection.csv", system="snomed", column="code"
+)

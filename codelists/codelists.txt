@@ -16,3 +16,6 @@ opensafely/current-copd/2020-05-06
 opensafely/sickle-cell-disease-snomed/2020-04-14
 opensafely/copd-infection/2020-05-16
 user/alexorlek/acne/59444b72
+user/alexorlek/otitis-media/45ef9475
+user/alexorlek/splenectomy/5eff07aa
+user/alexorlek/urinary-tract-infection/214e6dd9

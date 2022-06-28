@@ -107,6 +107,24 @@
       "url": "https://codelists.opensafely.org/codelist/user/alexorlek/acne/59444b72/",
       "downloaded_at": "2022-05-03 23:47:23.217393Z",
       "sha": "072c91b48953bd976f422651e84452df80b02072"
+    },
+    "user-alexorlek-otitis-media.csv": {
+      "id": "user/alexorlek/otitis-media/45ef9475",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/otitis-media/45ef9475/",
+      "downloaded_at": "2022-06-28 15:24:40.614172Z",
+      "sha": "d3223b76fbbe0336384d15c3c7099221a4f1173e"
+    },
+    "user-alexorlek-splenectomy.csv": {
+      "id": "user/alexorlek/splenectomy/5eff07aa",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/splenectomy/5eff07aa/",
+      "downloaded_at": "2022-06-28 15:24:40.779555Z",
+      "sha": "4a0a577584f7c47a1f44044d54a262352a3b90f1"
+    },
+    "user-alexorlek-urinary-tract-infection.csv": {
+      "id": "user/alexorlek/urinary-tract-infection/214e6dd9",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/urinary-tract-infection/214e6dd9/",
+      "downloaded_at": "2022-06-28 15:24:40.947858Z",
+      "sha": "0d2653c2acac1f10346d46f826004e2c67c0edce"
     }
   }
 }

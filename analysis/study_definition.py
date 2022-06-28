@@ -329,6 +329,9 @@ study = StudyDefinition(
     ),
  
  
+    # clinical events: comorbidities (variables prefixed with "has_" created using on_or_before statement); indications (variables prefixed with "had_" created using between statement) 
+    # returns binary_flag (this is the default for with_these_clinical_events variable extractor)
+
     # comorbidities
     has_copd = patients.with_these_clinical_events(
         copd_codes,
@@ -343,14 +346,32 @@ study = StudyDefinition(
     ),
 
     # indications
-    has_acne = patients.with_these_clinical_events(
+    had_acne = patients.with_these_clinical_events(
         acne_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
-    has_copd_infection = patients.with_these_clinical_events(
+    had_copd_infection = patients.with_these_clinical_events(
         copd_infection_codes,
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        return_expectations = {"incidence": 0.5}
+    ),
+
+    had_otitis_media = patients.with_these_clinical_events(
+        otitis_media_codes,
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        return_expectations = {"incidence": 0.5}
+    ),
+
+    had_splenectomy = patients.with_these_clinical_events(
+        splenectomy_codes,
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        return_expectations = {"incidence": 0.5}
+    ),    
+
+    had_uti = patients.with_these_clinical_events(
+        uti_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
