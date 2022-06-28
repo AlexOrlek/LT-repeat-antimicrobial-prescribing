@@ -89,32 +89,6 @@ study = StudyDefinition(
         """,
     ),
 
-     # comorbidities
-    has_copd = patients.with_these_clinical_events(
-        copd_codes,
-        on_or_before = "index_date",
-        return_expectations = {"incidence": 0.5}
-    ),
-
-    has_sickle_cell = patients.with_these_clinical_events(
-        sickle_cell_codes,
-        on_or_before = "index_date",
-        return_expectations = {"incidence": 0.5}
-    ),
-
-    # indications
-    has_acne = patients.with_these_clinical_events(
-        acne_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
-        return_expectations = {"incidence": 0.5}
-    ),
-
-    has_copd_infection = patients.with_these_clinical_events(
-        copd_infection_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
-        return_expectations = {"incidence": 0.5}
-    ),
-
 )
 
 # MEASURES
