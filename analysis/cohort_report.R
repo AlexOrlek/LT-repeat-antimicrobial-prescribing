@@ -64,7 +64,7 @@ cohort_df <- cohort_df %>% mutate(age_cat = case_when(age >= 18 & age < 30 ~ '18
                                          age >= 70  & age < 80 ~ '70-79',
                                          age >= 80  & age <= 120 ~ '80-120')) %>% mutate(age_cat = as.factor(age_cat))
 
-# ensure missing/other sex excluded and filter for repeat_amr patients
+# ensure missing/other sex excluded
 age_sex_df <- cohort_df %>% filter(sex %in% c('F','M'))
 
 # plot demographic pyramids for repeat_amr and non_repeat_amr patients
