@@ -330,7 +330,7 @@ study = StudyDefinition(
  
  
     # clinical events: comorbidities (variables prefixed with "has_" created using on_or_before statement); indications (variables prefixed with "had_" created using between statement) 
-    # returns binary_flag (this is the default for with_these_clinical_events variable extractor)
+    # returns binary_flag (default for with_these_clinical_events variable extractor) depending on whether patient had clinical event in defined period
 
     # comorbidities
     has_copd = patients.with_these_clinical_events(
