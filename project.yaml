@@ -24,16 +24,22 @@ actions:
     needs: [generate_study_population_precovid]
     outputs:
       moderately_sensitive:
-        lt_repeat_prop_table: output/n_lt_repeat_2020-01-01.csv
-        age_dist_figure: output/demographic_pyramid_2020-01-01.png
+        n_prescribing_table: output/n_prescribing_2020-01-01.csv
+        n_indications_table: output/n_indications_2020-01-01.csv
+        n_repeat_amr_table: output/n_repeat_amr_2020-01-01.csv
+        demographic_repeat_amr_figure: output/demographic_pyramid_repeat_amr_2020-01-01.png
+        demographic_non_repeat_amr_figure: output/demographic_pyramid_non_repeat_amr_2020-01-01.png
 
   describe_covid:
     run: r:latest analysis/cohort_report.R 2021-01-01
     needs: [generate_study_population_covid]
     outputs:
       moderately_sensitive:
-        lt_repeat_prop_table: output/n_lt_repeat_2021-01-01.csv
-        age_dist_figure: output/demographic_pyramid_2021-01-01.png
+        n_prescribing_table: output/n_prescribing_2021-01-01.csv
+        n_indications_table: output/n_indications_2021-01-01.csv
+        n_repeat_amr_table: output/n_repeat_amr_2021-01-01.csv
+        demographic_repeat_amr_figure: output/demographic_pyramid_repeat_amr_2021-01-01.png
+        demographic_non_repeat_amr_figure: output/demographic_pyramid_non_repeat_amr_2021-01-01.png
 
   # generate measures
   generate_measure_populations:
