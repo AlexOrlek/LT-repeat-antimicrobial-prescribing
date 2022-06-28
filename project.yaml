@@ -48,3 +48,10 @@ actions:
     outputs:
       moderately_sensitive:
         measure_csv: output/measures/measure_*.csv
+
+  describe_measures:
+    run: r:latest analysis/measures_report.R
+    needs: [generate_measures]
+    outputs:
+      moderately_sensitive:
+        measures_figure: output/measures/measure_prescribing.png
