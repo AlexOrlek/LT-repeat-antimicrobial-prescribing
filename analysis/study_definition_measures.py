@@ -91,7 +91,7 @@ study = StudyDefinition(
 
     non_repeat_amr = patients.satisfying(
         """
-        (amr_6_months < 3)
+        (amr_6_months < 3 AND amr_6_months > 0)
         """,
     ),
 
