@@ -388,56 +388,56 @@ study = StudyDefinition(
     # returns binary_flag (default for with_these_clinical_events variable extractor) depending on whether patient had clinical event in defined period
 
     # comorbidities
-    has_cancer_immunosuppression = patients.with_these_clinical_events(
+    has_comorbidity_cancer_immunosuppression = patients.with_these_clinical_events(
         cancer_immunosuppression_codes,
         on_or_before = "index_date",
         return_expectations = {"incidence": 0.5}
     ),
 
-    has_copd = patients.with_these_clinical_events(
+    has_comorbidity_copd = patients.with_these_clinical_events(
         copd_codes,
         on_or_before = "index_date",
         return_expectations = {"incidence": 0.5}
     ),
 
-    has_sickle_cell = patients.with_these_clinical_events(
+    has_comorbidity_sickle_cell = patients.with_these_clinical_events(
         sickle_cell_codes,
         on_or_before = "index_date",
         return_expectations = {"incidence": 0.5}
     ),
 
-    has_splenectomy = patients.with_these_clinical_events(
+    has_comorbidity_splenectomy = patients.with_these_clinical_events(
         splenectomy_codes,
         on_or_before = "index_date",
         return_expectations = {"incidence": 0.5}
     ),  
 
     # indications
-    had_acne = patients.with_these_clinical_events(
+    has_indication_acne = patients.with_these_clinical_events(
         acne_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
-    had_copd_infection = patients.with_these_clinical_events(
+    has_indication_copd_infection = patients.with_these_clinical_events(
         copd_infection_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
-    had_otitis_media = patients.with_these_clinical_events(
+    has_indication_otitis_media = patients.with_these_clinical_events(
         otitis_media_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
-    had_ssti = patients.with_these_clinical_events(
+    has_indication_ssti = patients.with_these_clinical_events(
         ssti_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
     ),
 
-    had_uti = patients.with_these_clinical_events(
+    has_indication_uti = patients.with_these_clinical_events(
         uti_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
