@@ -77,6 +77,31 @@ antibacterial_codes = combine_codelists(
     urinary_tract_infections_codes
 )
 
+demeclocycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-demeclocycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+doxycycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-doxycycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+lymecycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-lymecycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+minocycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-minocycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+oxytetracycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-oxytetracycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+tetracycline_codes = codelist_from_csv(
+    "codelists/user-alexorlek-tetracycline-tetracyclines.csv", system="snomed", column="dmd_id"
+)
+
+
 # demographic codes
 ethnicity_codes = codelist_from_csv(
     "codelists/opensafely-ethnicity.csv", system="ctv3", column="Code", category_column="Grouping_16"
@@ -84,6 +109,10 @@ ethnicity_codes = codelist_from_csv(
 
 
 # comorbidity codes
+cancer_immunosuppression_codes = codelist_from_csv(
+    "codelists/user-alexorlek-cancer-immunosuppression.csv", system="snomed", column="code"
+)
+
 copd_codes = codelist_from_csv(
     "codelists/opensafely-current-copd.csv", system="ctv3", column="CTV3ID"
 )
@@ -91,6 +120,11 @@ copd_codes = codelist_from_csv(
 sickle_cell_codes = codelist_from_csv(
     "codelists/opensafely-sickle-cell-disease-snomed.csv", system="snomed", column="id"
 )
+
+splenectomy_codes = codelist_from_csv(
+    "codelists/user-alexorlek-splenectomy.csv", system="snomed", column="code"
+)
+
 
 # indication codes
 acne_codes = codelist_from_csv(
@@ -105,8 +139,8 @@ otitis_media_codes = codelist_from_csv(
     "codelists/user-alexorlek-otitis-media.csv", system="snomed", column="code"
 )
 
-splenectomy_codes = codelist_from_csv(
-    "codelists/user-alexorlek-splenectomy.csv", system="snomed", column="code"
+ssti_codes = codelist_from_csv(
+    "codelists/user-alexorlek-skin-and-soft-tissue-infections.csv", system="snomed", column="code"
 )
 
 uti_codes = codelist_from_csv(

@@ -78,6 +78,42 @@
       "downloaded_at": "2022-05-16 16:21:55.808126Z",
       "sha": "ea5c847c63f0e19eb56d438291921154e02139c9"
     },
+    "user-alexorlek-demeclocycline-tetracyclines.csv": {
+      "id": "user/alexorlek/demeclocycline-tetracyclines/5d68378f",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/demeclocycline-tetracyclines/5d68378f/",
+      "downloaded_at": "2022-08-01 12:59:07.631094Z",
+      "sha": "834c502633ad82c0c3395500581689f6473cbae1"
+    },
+    "user-alexorlek-doxycycline-tetracyclines.csv": {
+      "id": "user/alexorlek/doxycycline-tetracyclines/4458c45a",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/doxycycline-tetracyclines/4458c45a/",
+      "downloaded_at": "2022-08-01 12:59:07.858018Z",
+      "sha": "6c7bb52a20e565a34c40fe1b1880be6478d9c776"
+    },
+    "user-alexorlek-lymecycline-tetracyclines.csv": {
+      "id": "user/alexorlek/lymecycline-tetracyclines/1239ddf0",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/lymecycline-tetracyclines/1239ddf0/",
+      "downloaded_at": "2022-08-01 12:59:08.024931Z",
+      "sha": "97bb49c598dab0c873a6671cf936004b7f0de037"
+    },
+    "user-alexorlek-minocycline-tetracyclines.csv": {
+      "id": "user/alexorlek/minocycline-tetracyclines/792a6aba",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/minocycline-tetracyclines/792a6aba/",
+      "downloaded_at": "2022-08-01 12:59:08.256833Z",
+      "sha": "fa7825c7a319c18041be214efba40445ac8eae89"
+    },
+    "user-alexorlek-oxytetracycline-tetracyclines.csv": {
+      "id": "user/alexorlek/oxytetracycline-tetracyclines/601af785",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/oxytetracycline-tetracyclines/601af785/",
+      "downloaded_at": "2022-08-01 12:59:08.437129Z",
+      "sha": "4e585c1d47acab9b0876bf4050553e806ca8b7ff"
+    },
+    "user-alexorlek-tetracycline-tetracyclines.csv": {
+      "id": "user/alexorlek/tetracycline-tetracyclines/470b8450",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/tetracycline-tetracyclines/470b8450/",
+      "downloaded_at": "2022-08-01 12:59:08.582427Z",
+      "sha": "e751352069ea8414bfab6f4e5bd4fece16f1955d"
+    },
     "opensafely-ethnicity.csv": {
       "id": "opensafely/ethnicity/2020-04-27",
       "url": "https://codelists.opensafely.org/codelist/opensafely/ethnicity/2020-04-27/",
@@ -109,22 +145,34 @@
       "sha": "072c91b48953bd976f422651e84452df80b02072"
     },
     "user-alexorlek-otitis-media.csv": {
-      "id": "user/alexorlek/otitis-media/45ef9475",
-      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/otitis-media/45ef9475/",
-      "downloaded_at": "2022-06-28 15:24:40.614172Z",
-      "sha": "d3223b76fbbe0336384d15c3c7099221a4f1173e"
+      "id": "user/alexorlek/otitis-media/7bdd2ab0",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/otitis-media/7bdd2ab0/",
+      "downloaded_at": "2022-08-01 12:59:10.028287Z",
+      "sha": "057e856c7349162d80ca3cbc24fbd1aa8bf19e7c"
+    },
+    "user-alexorlek-skin-and-soft-tissue-infections.csv": {
+      "id": "user/alexorlek/skin-and-soft-tissue-infections/2dfc111b",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/skin-and-soft-tissue-infections/2dfc111b/",
+      "downloaded_at": "2022-08-01 12:59:10.269428Z",
+      "sha": "b1441883485170ba4fd7c42d6221bd976803ce32"
+    },
+    "user-alexorlek-urinary-tract-infection.csv": {
+      "id": "user/alexorlek/urinary-tract-infection/62cdb77b",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/urinary-tract-infection/62cdb77b/",
+      "downloaded_at": "2022-08-01 12:59:10.479087Z",
+      "sha": "dae04e85fb1f5e6d473f659f9a3b121475ef4bfe"
+    },
+    "user-alexorlek-cancer-immunosuppression.csv": {
+      "id": "user/alexorlek/cancer-immunosuppression/398dc482",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/cancer-immunosuppression/398dc482/",
+      "downloaded_at": "2022-08-01 12:59:10.707382Z",
+      "sha": "c5451034dab4224211db5893c3ee895ae055e88b"
     },
     "user-alexorlek-splenectomy.csv": {
       "id": "user/alexorlek/splenectomy/5eff07aa",
       "url": "https://codelists.opensafely.org/codelist/user/alexorlek/splenectomy/5eff07aa/",
       "downloaded_at": "2022-06-28 15:24:40.779555Z",
       "sha": "4a0a577584f7c47a1f44044d54a262352a3b90f1"
-    },
-    "user-alexorlek-urinary-tract-infection.csv": {
-      "id": "user/alexorlek/urinary-tract-infection/214e6dd9",
-      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/urinary-tract-infection/214e6dd9/",
-      "downloaded_at": "2022-06-28 15:24:40.947858Z",
-      "sha": "0d2653c2acac1f10346d46f826004e2c67c0edce"
     }
   }
 }

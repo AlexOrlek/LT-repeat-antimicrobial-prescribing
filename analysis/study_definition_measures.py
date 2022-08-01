@@ -53,13 +53,13 @@ study = StudyDefinition(
         }
     ),
 
-    stp = patients.registered_practice_as_of(
-        "index_date",
-        returning = "stp_code",
-        return_expectations={
-            "category": {"ratios": dict_stp},
-        },
-    ),
+    # stp = patients.registered_practice_as_of(
+    #     "index_date",
+    #     returning = "stp_code",
+    #     return_expectations={
+    #         "category": {"ratios": dict_stp},
+    #     },
+    # ),
 
      # antibiotic prescribing
     amr_6_months = patients.with_these_medications(
@@ -72,38 +72,50 @@ study = StudyDefinition(
         },
     ),
 
-    amr_6_months_first_match = patients.with_these_medications(
-        antibacterial_codes,
-        between = ["index_date - 6 months", "index_date"],
-        find_first_match_in_period = True,
-        date_format="YYYY-MM-DD",
-        returning = "date",
-        return_expectations = {
-            "date": {"earliest": "index_date - 6 months", "latest": "index_date"}
-        },
-    ),
+    # amr_6_months_first_match = patients.with_these_medications(
+    #     antibacterial_codes,
+    #     between = ["index_date - 6 months", "index_date"],
+    #     find_first_match_in_period = True,
+    #     date_format="YYYY-MM-DD",
+    #     returning = "date",
+    #     return_expectations = {
+    #         "date": {"earliest": "index_date - 6 months", "latest": "index_date"}
+    #     },
+    # ),
 
-    amr_6_months_binary = patients.satisfying(
+    repeat_amr = patients.satisfying(
         """
         (amr_6_months >= 3)
+        """,
+    ),
+
+    non_repeat_amr = patients.satisfying(
+        """
+        (amr_6_months < 3)
         """,
     ),
 
 )
 
 # MEASURES
-# proportion of population receiving long-term repeat prescriptions
+# proportion of population receiving repeat antibiotic prescriptions
 measures = [
     Measure(
-        id = "prescribing",
-        numerator = "amr_6_months_binary",
+        id = "repeat_prescribing",
+        numerator = "repeat_amr",
         denominator = "population",
         group_by = "population"
     ),
     Measure(
-        id = "prescribing_stp",
-        numerator = "amr_6_months_binary",
+        id = "non_repeat_prescribing",
+        numerator = "non_repeat_amr",
         denominator = "population",
-        group_by = "stp",
+        group_by = "population"
     ),
+    # Measure(
+    #     id = "prescribing_stp",
+    #     numerator = "amr_6_months_binary",
+    #     denominator = "population",
+    #     group_by = "stp",
+    # ),
 ]

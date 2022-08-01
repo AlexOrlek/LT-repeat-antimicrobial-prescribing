@@ -327,12 +327,73 @@ study = StudyDefinition(
             "incidence": 0.2,
         },
     ),
- 
- 
+
+    demeclocycline_6_months = patients.with_these_medications(
+        demeclocycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ),
+    doxycycline_6_months = patients.with_these_medications(
+        doxycycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ), 
+    lymecycline_6_months = patients.with_these_medications(
+        lymecycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ),
+    minocycline_6_months = patients.with_these_medications(
+        minocycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ),
+    oxytetracycline_6_months = patients.with_these_medications(
+        oxytetracycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ),
+    tetracycline_6_months = patients.with_these_medications(
+        tetracycline_codes,
+        between = ["index_date - 6 months", "index_date"],
+        returning = "number_of_matches_in_period",
+        return_expectations = {
+            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "incidence": 0.2,
+        },
+    ),
+
+
     # clinical events: comorbidities (variables prefixed with "has_" created using on_or_before statement); indications (variables prefixed with "had_" created using between statement) 
     # returns binary_flag (default for with_these_clinical_events variable extractor) depending on whether patient had clinical event in defined period
 
     # comorbidities
+    has_cancer_immunosuppression = patients.with_these_clinical_events(
+        cancer_immunosuppression_codes,
+        on_or_before = "index_date",
+        return_expectations = {"incidence": 0.5}
+    ),
+
     has_copd = patients.with_these_clinical_events(
         copd_codes,
         on_or_before = "index_date",
@@ -344,6 +405,12 @@ study = StudyDefinition(
         on_or_before = "index_date",
         return_expectations = {"incidence": 0.5}
     ),
+
+    has_splenectomy = patients.with_these_clinical_events(
+        splenectomy_codes,
+        on_or_before = "index_date",
+        return_expectations = {"incidence": 0.5}
+    ),  
 
     # indications
     had_acne = patients.with_these_clinical_events(
@@ -364,11 +431,11 @@ study = StudyDefinition(
         return_expectations = {"incidence": 0.5}
     ),
 
-    had_splenectomy = patients.with_these_clinical_events(
-        splenectomy_codes,
+    had_ssti = patients.with_these_clinical_events(
+        ssti_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
         return_expectations = {"incidence": 0.5}
-    ),    
+    ),
 
     had_uti = patients.with_these_clinical_events(
         uti_codes,
