@@ -135,6 +135,10 @@ copd_infection_codes = codelist_from_csv(
     "codelists/opensafely-copd-infection.csv", system="ctv3", column="CTV3ID"
 )
 
+dental_infection_codes = codelist_from_csv(
+    "codelists/user-alexorlek-dental-and-gum-infections.csv", system="snomed", column="code"
+)
+
 otitis_media_codes = codelist_from_csv(
     "codelists/user-alexorlek-otitis-media.csv", system="snomed", column="code"
 )

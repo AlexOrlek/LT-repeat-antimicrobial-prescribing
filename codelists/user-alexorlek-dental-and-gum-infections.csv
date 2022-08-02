@@ -1,0 +1,310 @@
+code,term
+1085951000119102,Dental caries on pit and fissure surface limited to enamel
+1085961000119100,Dental caries on pit and fissure surface penetrating into dentin
+1085971000119106,Dental caries on pit and fissure surface penetrating into pulp
+1085981000119109,Dental caries on smooth surface limited to enamel
+1085991000119107,Dental caries on smooth surface penetrating into dentin
+1086001000119108,Dental caries on smooth surface penetrating into pulp
+109564008,Dental caries associated with enamel hypomineralization
+109566005,Dental caries associated with enamel hypoplasia
+109568006,Dental caries secondary to developmental defects of tooth structure
+109569003,Dental caries secondary to acquired defects of tooth structure
+109570002,Primary dental caries
+109571003,Primary dental caries of indeterminate origin
+109572005,"Primary dental caries, cervical origin"
+109573000,"Primary dental caries, proximal smooth surface origin"
+109574006,"Primary dental caries, nonproximal smooth surface origin"
+109575007,"Primary dental caries, pit and fissure origin"
+109576008,"Primary dental caries, root surface origin"
+109577004,"Primary dental caries, multisurface origin"
+109578009,Caries of infancy
+109580003,Caries of infancy associated with breast feeding
+109581004,Caries of infancy associated with bottle feeding
+109602002,Acute apical abscess
+109603007,Chronic apical abscess
+109605000,Acute apical periodontitis
+109611002,Cellulitis of gingiva
+109617003,Suppurative inflammation of subgingival space
+109625001,Gingival papillary cratering
+12033006,Marginal periodontitis
+13959000,Ulcerative gingivitis
+140371009,O/E - gingivitis
+149018009,Drainage of dental abscess
+155639003,Dental abscess
+155643004,Acute gingivitis
+155644005,(Chronic gingivitis) or (gingivostomatitis)
+155646007,Acute periodontitis
+155647003,Chronic periodontitis
+155648008,(Gingival and periodontal disease NOS) or (giant cell epulis) or (periodontitis)
+15733007,Incipient enamel caries
+163160005,On examination - gingivitis
+171847006,Acute necrotizing ulcerative gingivitis
+172697005,Acute ulcerative gingivitis
+173599005,Acute necrotizing ulcerative gingivostomatitis
+186962003,Acute necrotising ulcerative gingivitis
+196298000,Acute dentine dental caries
+196299008,Chronic dentine dental caries
+196301001,Acute enamel dental caries
+196302008,Chronic enamel dental caries
+196305005,Odontoclasia
+196338001,(Acute apical periodontitis) or (dental infection)
+196339009,Periapical abscess without a sinus
+196340006,Dental abscess
+196343008,Chronic apical periodontitis
+196345001,Chronic apical periodontitis NOS
+196354003,Gingival &/or periodontal disease (& [gingivitis])
+196355002,Gingivitis (& [chronic])
+196356001,Chronic marginal gingivitis
+196357005,Ulcerative gingivitis
+196358000,Chronic gingivitis NOS
+196361004,Acute periodontitis
+196364007,Acute periodontitis NOS
+196366009,Chronic periodontitis simplex
+196367000,Chronic periodontitis complex
+196368005,Alveolar pyorrhea
+196369002,Chronic periodontitis NOS
+20607006,Gingivostomatitis
+21638000,Acute periodontitis
+22208002,Desquamative gingivitis
+22240003,Pericoronitis
+232427004,Vincent's laryngitis
+234976000,Rampant dental caries
+234989006,Gingivitis/gingival disease
+234990002,Acute gingivitis
+234991003,Puberty gingivitis
+234992005,Plasma cell gingivitis
+234993000,Hypersensitivity gingivitis
+234995007,Chronic fibrous gingivitis
+234996008,Chronic fibroedematous gingivitis
+234997004,Chronic gingival granulomatous condition
+234998009,Orofacial granulomatosis of gingivae
+235000001,Granulomatosis with polyangiitis of gingiva
+235004005,Gingivitis artefacta
+235007003,Early onset periodontitis
+235008008,Refractory periodontitis
+235009000,Human immunodeficiency virus-associated periodontitis
+235010005,Acute necrotizing ulcerative periodontitis
+235011009,Migratory dental abscess
+240675006,Vincent's infection
+252283005,Marginal periodontitis
+2624008,Prepubertal periodontitis
+266490003,(Chronic gingivitis) or (gingivostomatitis)
+266491004,(Gingival and periodontal disease NOS) or (giant cell epulis) or (periodontitis)
+278519005,Acute necrotising ulcerative gingivitis
+282043004,Drainage of dental abscess
+299709002,Dental abscess
+304985000,Localized prepubertal periodontitis
+304986004,Prepubertal generalized periodontitis
+304987008,Early onset localized periodontitis
+304988003,Early onset generalized periodontitis
+304989006,Chronic periodontitis with drifting of teeth
+30512007,Cementum caries
+30896000,Acute necrotizing ulcerative gingivitis
+31642005,Acute gingivitis
+387665005,Pulpal abscess
+39273001,Apical periodontitis
+398244008,Drainage of acute apical abscess
+399050001,Acute necrotizing ulcerative gingivitis
+402251006,Allergic contact gingivostomatitis
+402289001,Irritant contact gingivostomatitis
+402441007,Oral involvement by mucous membrane pemphigoid
+409865002,Vincent's disease
+41565005,Periodontitis
+42123008,"Type III, moderate periodontitis, moderate to deep pocket therapy"
+4237001,Suppurative pulpitis
+4264000,Chronic pericoronitis
+427898007,Infection of tooth
+43043007,Periodontal lesion due to traumatic occlusion
+442231009,Caries involving multiple surfaces of tooth
+442551007,Dental caries extending into dentin
+449763003,Foreign body gingivitis
+449764009,Granulomatous foreign body gingivitis
+449768007,Lichenoid foreign body gingivitis
+449782007,Papillary gingivitis
+449908004,Aggressive periodontitis
+450525007,Drainage of dental abscess by extraoral approach
+450526008,Drainage of dental abscess by intraoral approach
+47548009,Necrotizing ulcerative gingivoperiodontitis
+49965002,Juvenile periodontitis
+50869007,"Ehlers-Danlos syndrome, type 8"
+5689008,Chronic periodontitis
+57920007,Herpetic gingivostomatitis
+59789006,"Type I, gingivitis, shallow pocket therapy"
+624331000000104,Chronic gingivitis NOS
+624351000000106,Acute periodontitis NOS
+624361000000109,Chronic periodontitis NOS
+647811000000105,Chronic apical periodontitis NOS
+66383009,Gingivitis
+6732009,"Type II, early periodontitis, moderate pocket therapy"
+699422003,Dental peri-implantitis
+699489009,Dental caries class I
+699490000,Dental caries class II
+699491001,Dental caries class III
+699492008,Dental caries class IV
+699494009,Dental caries class V
+699495005,Dental caries class VI
+699683004,Nonrestorable carious tooth
+699785004,Periodontitis as manifestation of systemic disease
+700046006,Carious exposure of pulp
+700240005,Gingivitis associated with menstrual cycle
+702402003,Early childhood caries
+702646000,Extensive cavitated lesion with exposed dentine
+702784001,Gingivitis associated with oral contraceptive use
+703148008,Periodontitis associated with chronic familial neutropenia
+703149000,Periodontitis associated with cyclical neutropenia
+703339005,Moderate cavitated lesion limited to outer half of dentin
+705126000,Gingivitis due to ascorbic acid deficiency
+705127009,Gingivitis due to leukemia
+706984006,Necrotizing periodontal disease
+707251008,Generalized chronic periodontitis
+707252001,Localized chronic periodontitis
+707320004,Necrotizing ulcerative periodontitis
+707792000,Necrotizing ulcerative gingivitis
+707989006,Contact gingivostomatitis
+708508006,Necrotizing gingivostomatitis
+709147009,Gingivitis co-occurrent with diabetes mellitus
+709465004,Periodontitis co-occurrent with Chédiak-Higashi syndrome
+709466003,Periodontitis co-occurrent with Cohen syndrome
+709469005,Periodontitis co-occurrent with Down syndrome
+709471005,Periodontitis co-occurrent with leukemia
+709472003,Periodontitis due to Papillon-Lefèvre syndrome
+709535007,Periodontitis co-occurrent with infantile genetic agranulocytosis
+709556009,Periodontitis co-occurrent with hypophosphatasia
+709557000,Periodontitis co-occurrent with hematologic disorder
+709561006,Periodontitis co-occurrent with glycogen storage disease
+709604005,Periodontitis co-occurrent with Ehlers-Danlos syndrome type 4
+709608008,Periodontitis co-occurrent with acquired neutropenia
+710096000,Periodontitis co-occurrent and due to histiocytosis syndrome
+710735009,Periodontitis co-occurrent with leukocyte adhesion deficiency
+710786004,Gingivitis due to disorder of cellular component of blood
+710903001,Periodontitis co-occurrent with genetic disorder
+710926008,Periodontitis co-occurrent with familial neutropenia
+710927004,Periodontitis co-occurrent with cyclical neutropenia
+711173006,Pit and fissure caries
+711174000,Interproximal enamel caries
+711175004,Caries of smooth surface of tooth
+713211001,Periodontitis due to fracture of root of tooth
+713212008,Periodontitis due to secondary occlusal trauma
+713213003,Periodontitis due to primary occlusal trauma
+713214009,Periodontitis due to occlusal trauma
+713236007,Allergic contact gingivitis caused by acrylic dental material
+713245008,Gingivitis due to dental plaque
+713256008,Periodontitis due to cervical root resorption
+713343003,Periodontitis caused by dental appliance
+713879003,Gingivitis due to dental plaque with local contributing factor
+714103006,Gingival disease due to menstrual cycle
+714126004,Generalized gingivitis
+714148005,Allergic contact gingivitis caused by nickel
+714149002,Allergic contact gingivitis caused by mercury
+714249007,Mild gingivitis
+714477000,Severe gingivitis
+714478005,Moderate gingivitis
+714485009,Localized gingivitis
+714522006,Allergic gingival disease
+715285004,Localized slight chronic periodontitis
+715286003,Localized moderate chronic periodontitis
+715287007,Localized severe chronic periodontitis
+715843008,Localized slight acute periodontitis
+715859008,Localized moderate acute periodontitis
+715860003,Localized severe acute periodontitis
+716117004,Periodontitis due to anatomic tooth factor
+716183006,Periodontitis due to defective dental restoration
+716364007,Caries of cervical margin of tooth
+718052004,Asymptomatic periapical periodontitis
+718053009,Symptomatic periapical periodontitis
+718060003,Generalized slight chronic periodontitis
+718061004,Generalized severe chronic periodontitis
+718062006,Generalized moderate chronic periodontitis
+718064007,Generalized slight acute periodontitis
+718065008,Generalized severe acute periodontitis
+718066009,Generalized moderate acute periodontitis
+718075006,Partial dental peri-implantitis
+718077003,Complete dental peri-implantitis
+718471008,Oral pemphigoid of gingival mucous membrane
+720980004,"Alopecia, psychomotor epilepsy, periodontal pyorrhea, intellectual disability syndrome"
+721159001,Dental caries due to fluorine deficiency
+721616005,Chronic necrotizing ulcerative gingivitis
+72621003,Chronic gingivitis
+733939000,Primary active dental caries extending into outer half of enamel
+733940003,Primary active dental caries extending into inner half of enamel
+733941004,Primary active dental caries extending into outer third of dentin
+733942006,Primary active dental caries extending into middle third of dentin
+733943001,Primary active dental caries extending into inner third of dentin
+733944007,Secondary active dental caries extending into outer half of enamel
+733945008,Secondary active dental caries extending into inner half of enamel
+733946009,Secondary active dental caries extending into outer third of dentin
+733947000,Secondary active dental caries extending into middle third of dentin
+733948005,Secondary active dental caries extending into inner third of dentin
+733949002,Primary non-active dental caries extending into outer half of enamel
+733950002,Primary non-active dental caries extending into inner half of enamel
+733951003,Primary non-active dental caries extending into outer third of dentin
+733952005,Primary non-active dental caries extending into middle third of dentin
+733954006,Secondary non-active dental caries extending into outer half of enamel
+733955007,Secondary non-active dental caries extending into inner half of enamel
+733957004,Secondary non-active dental caries extending into outer third of dentin
+733958009,Secondary non-active dental caries extending into middle third of dentin
+733961005,Primary non-active dental caries extending into inner third of dentin
+733962003,Secondary non-active dental caries extending into inner third of dentin
+733968004,Active dental caries
+733970008,Primary active dental caries extending into enamel
+733971007,Primary non-active dental caries extending into enamel
+733972000,Primary active dental caries extending into dentin
+733973005,Primary non-active dental caries extending into dentin
+733974004,Secondary active dental caries extending into enamel
+733975003,Secondary non-active dental caries extending into enamel
+733976002,Secondary active dental caries extending into dentin
+733977006,Secondary non-active dental caries extending into dentin
+733978001,Primary non-active dental caries extending into pulp
+733980007,Primary active dental caries extending into pulp
+733982004,Secondary active dental caries extending into pulp
+74797001,Adult periodontitis
+75891001,Rapidly progressive periodontitis
+75954006,"Type IV, advanced periodontitis, deep pocket therapy"
+763658004,"Hypotrichosis, osteolysis, periodontitis, palmoplantar keratoderma syndrome"
+764487004,Chronic desquamative gingivitis
+767855004,Secondary non-active dental caries extending into pulp
+768639006,Initial stage caries of crown of tooth
+768641007,Initial stage active caries of crown of tooth
+768642000,Initial stage non-active caries of crown of tooth
+768643005,Moderate stage caries of crown of tooth
+768646002,Moderate stage active caries of crown of tooth
+768648001,Moderate stage non-active caries of crown of tooth
+768649009,Extensive stage caries of crown of tooth
+768653006,Extensive stage active caries of crown of tooth
+768654000,Extensive stage non-active caries of crown of tooth
+769014008,Non-active cavitated caries of tooth root
+769017001,Active cavitated caries of tooth root
+769020009,Non-cavitated caries of tooth root
+769021008,Active non-cavitated caries of tooth root
+769023006,Non-active non-cavitated caries of tooth root
+787446001,Localized periodontitis
+787447005,Generalized periodontitis
+787448000,Molar and incisor pattern periodontitis
+78996009,Acute suppurative alveolar periostitis
+80034003,Simple marginal gingivitis
+80353004,Enamel caries
+804371000000104,Extraoral drainage of dental abscess
+804381000000102,Intraoral drainage of dental abscess
+80753001,Non-active dental caries
+80967001,Dental caries
+83412009,Periodontal abscess
+84161008,Hyperplastic gingivitis
+87782002,Chronic apical periodontitis
+88071000,Acute apical periodontitis of pulpal origin
+91862002,Acute periodontal abscess
+91863007,Acute pericoronitis
+91924004,Allergic gingivitis
+91949000,Atrophic senile gingivitis
+92804002,Catarrhal gingivitis
+93164008,Localized adult periodontitis
+93420009,Cotton-roll gingivitis
+93449001,Eruptive gingivitis
+93462002,Generalized adult periodontitis
+93464001,Generalized marginal gingivitis
+95246007,Salivary dysfunction caries secondary to aging
+95247003,Salivary dysfunction caries caused by medication
+95248008,Salivary dysfunction caries secondary to radiation therapy
+95249000,Salivary dysfunction dental caries
+95252008,Secondary dental caries associated with failed or defective dental restoration
+95253003,Secondary dental caries associated with local or systemic factors
+95254009,Secondary dental caries

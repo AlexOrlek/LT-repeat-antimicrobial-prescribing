@@ -144,6 +144,12 @@
       "downloaded_at": "2022-05-03 23:47:23.217393Z",
       "sha": "072c91b48953bd976f422651e84452df80b02072"
     },
+    "user-alexorlek-dental-and-gum-infections.csv": {
+      "id": "user/alexorlek/dental-and-gum-infections/2fe81d82",
+      "url": "https://codelists.opensafely.org/codelist/user/alexorlek/dental-and-gum-infections/2fe81d82/",
+      "downloaded_at": "2022-08-02 01:26:13.788953Z",
+      "sha": "320a5cebc65b15bde3a068aeb1196445f5558004"
+    },
     "user-alexorlek-otitis-media.csv": {
       "id": "user/alexorlek/otitis-media/7bdd2ab0",
       "url": "https://codelists.opensafely.org/codelist/user/alexorlek/otitis-media/7bdd2ab0/",

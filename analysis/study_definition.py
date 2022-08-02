@@ -425,6 +425,12 @@ study = StudyDefinition(
         return_expectations = {"incidence": 0.5}
     ),
 
+    has_indication_dental_infection = patients.with_these_clinical_events(
+        dental_infection_codes,
+        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        return_expectations = {"incidence": 0.5}
+    ),
+    
     has_indication_otitis_media = patients.with_these_clinical_events(
         otitis_media_codes,
         between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
