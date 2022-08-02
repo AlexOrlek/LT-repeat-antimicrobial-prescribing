@@ -42,7 +42,7 @@ write.csv(n_indications, here::here("output", gsub("%s", cohort_date, "n_indicat
 # matrix of co-occurrence between clinical conditions
 co_occurrence_matrix <- as.data.frame(crossprod(as.matrix(cohort_df %>% select(starts_with('has_')) %>% select(-has_any_clinical_condition))))
 co_occurrence_matrix <- co_occurrence_matrix %>% mutate(across(everything(), .fns = ~ ifelse(.x <5, NA, .x)))  # small count suppression
-write.table(co_occurrence_matrix, here::here("output", gsub("%s", cohort_date, "n_indications_co_occurrence_%s.csv")), sep = ',', row.names = TRUE, col.names = NA)
+write.table(co_occurrence_matrix, here::here("output", gsub("%s", cohort_date, "n_indications_co_occurrence_%s.csv")), sep = ',', row.names = colnames(co_occurrence_matrix), col.names = NA)
 
 
 # ---------------------------

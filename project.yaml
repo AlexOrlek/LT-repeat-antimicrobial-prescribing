@@ -26,9 +26,9 @@ actions:
       moderately_sensitive:
         n_prescribing_table: output/n_prescribing_2020-01-01.csv
         n_indications_table: output/n_indications_2020-01-01.csv
+        n_indications_co_occurrence_table: output/n_indications_co_occurrence_2020-01-01.csv
         n_repeat_amr_table: output/n_repeat_amr_2020-01-01.csv
-        demographic_repeat_amr_figure: output/demographic_pyramid_repeat_amr_2020-01-01.png
-        demographic_non_repeat_amr_figure: output/demographic_pyramid_non_repeat_amr_2020-01-01.png
+        demographics_table: output/demographics_table_2020-01-01.csv
 
   describe_covid:
     run: r:latest analysis/cohort_report.R 2021-01-01
@@ -37,9 +37,9 @@ actions:
       moderately_sensitive:
         n_prescribing_table: output/n_prescribing_2021-01-01.csv
         n_indications_table: output/n_indications_2021-01-01.csv
+        n_indications_co_occurrence_table: output/n_indications_co_occurrence_2021-01-01.csv
         n_repeat_amr_table: output/n_repeat_amr_2021-01-01.csv
-        demographic_repeat_amr_figure: output/demographic_pyramid_repeat_amr_2021-01-01.png
-        demographic_non_repeat_amr_figure: output/demographic_pyramid_non_repeat_amr_2021-01-01.png
+        demographics_table: output/demographics_table_2021-01-01.csv
 
   # generate measures
   generate_measure_populations:
@@ -55,9 +55,9 @@ actions:
       moderately_sensitive:
         measure_csv: output/measures/measure_*.csv
 
-  # describe_measures:
-  #   run: r:latest analysis/measures_report.R
-  #   needs: [generate_measures]
-  #   outputs:
-  #     moderately_sensitive:
-  #       measures_figure: output/measures/measure_prescribing.png
+  describe_measures:
+    run: r:latest analysis/measures_report.R
+    needs: [generate_measures]
+    outputs:
+      moderately_sensitive:
+        measures_figure: output/measures/measure_prescribing.png
