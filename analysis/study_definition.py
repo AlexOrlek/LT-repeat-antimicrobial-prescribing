@@ -415,37 +415,37 @@ study = StudyDefinition(
     # indications
     has_indication_acne = patients.with_these_clinical_events(
         acne_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
 
     has_indication_copd_infection = patients.with_these_clinical_events(
         copd_infection_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
 
     has_indication_dental_infection = patients.with_these_clinical_events(
         dental_infection_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
     
     has_indication_otitis_media = patients.with_these_clinical_events(
         otitis_media_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
 
     has_indication_ssti = patients.with_these_clinical_events(
         ssti_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
 
     has_indication_uti = patients.with_these_clinical_events(
         uti_codes,
-        between = ["amr_6_months_first_match - 14 days", "amr_6_months_first_match + 14 days"],
+        between = ["amr_6_months_first_match - 3 months", "amr_6_months_first_match + 3 months"],
         return_expectations = {"incidence": 0.5}
     ),
 
