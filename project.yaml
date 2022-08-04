@@ -25,9 +25,12 @@ actions:
     outputs:
       moderately_sensitive:
         n_prescribing_table: output/n_prescribing_2020-01-01.csv
-        n_indications_table: output/n_indications_2020-01-01.csv
-        n_indications_co_occurrence_table: output/n_indications_co_occurrence_2020-01-01.csv
+        n_indications_repeat_amr_table: output/n_indications_repeat_amr_2020-01-01.csv
+        n_indications_non_repeat_amr_table: output/n_indications_non_repeat_amr_2020-01-01.csv
+        n_indications_co_occurrence_repeat_amr_table: output/n_indications_co_occurrence_repeat_amr_2020-01-01.csv
+        n_indications_co_occurrence_non_repeat_amr_table: output/n_indications_co_occurrence_non_repeat_amr_2020-01-01.csv
         n_repeat_amr_table: output/n_repeat_amr_2020-01-01.csv
+        n_non_repeat_amr_table: output/n_non_repeat_amr_2020-01-01.csv
         demographics_table: output/demographics_table_2020-01-01.csv
 
   describe_covid:
@@ -36,9 +39,12 @@ actions:
     outputs:
       moderately_sensitive:
         n_prescribing_table: output/n_prescribing_2021-01-01.csv
-        n_indications_table: output/n_indications_2021-01-01.csv
-        n_indications_co_occurrence_table: output/n_indications_co_occurrence_2021-01-01.csv
+        n_indications_repeat_amr_table: output/n_indications_repeat_amr_2021-01-01.csv
+        n_indications_non_repeat_amr_table: output/n_indications_non_repeat_amr_2021-01-01.csv
+        n_indications_co_occurrence_repeat_amr_table: output/n_indications_co_occurrence_repeat_amr_2021-01-01.csv
+        n_indications_co_occurrence_non_repeat_amr_table: output/n_indications_co_occurrence_non_repeat_amr_2021-01-01.csv
         n_repeat_amr_table: output/n_repeat_amr_2021-01-01.csv
+        n_non_repeat_amr_table: output/n_non_repeat_amr_2021-01-01.csv
         demographics_table: output/demographics_table_2021-01-01.csv
 
   # generate measures
