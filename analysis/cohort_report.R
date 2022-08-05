@@ -30,6 +30,7 @@ cohort_df <- cohort_df %>%
   ))
 
 # append has_any_clinical_condition
+cohort_df <- cohort_df %>% rowwise() %>% mutate(has_any_clinical_condition = sum(c_across(starts_with('has_')))) %>% ungroup() %>% mutate(has_any_clinical_condition = ifelse(has_any_clinical_condition > 0, 1, 0))
 cohort_df <- cohort_df %>% rowwise() %>% mutate(repeat_amr_has_any_clinical_condition = sum(c_across(starts_with('repeat_amr_has_')))) %>% ungroup() %>% mutate(repeat_amr_has_any_clinical_condition = ifelse(repeat_amr_has_any_clinical_condition > 0, 1, 0))
 cohort_df <- cohort_df %>% rowwise() %>% mutate(non_repeat_amr_has_any_clinical_condition = sum(c_across(starts_with('non_repeat_amr_has_')))) %>% ungroup() %>% mutate(non_repeat_amr_has_any_clinical_condition = ifelse(non_repeat_amr_has_any_clinical_condition > 0, 1, 0))
 
