@@ -2,7 +2,8 @@ pacman::p_load(tidyverse, data.table)
 theme_set(theme_bw())
 args = commandArgs(trailingOnly=TRUE)
 cohort_date = args[1]
-small_count_threshold <- 5
+small_count_threshold <- 6  # https://docs.opensafely.org/releasing-files/#redacting-counts-less-than-or-equal-to-5
+small_count_threshold_prior_to_rounding <- 8  # https://docs.opensafely.org/releasing-files/#rounding-counts
 
 # read cohort data
 cohort_df <- read.csv(here::here("output", gsub("%s", cohort_date, "input_%s.csv")), header = TRUE)
@@ -102,7 +103,7 @@ for (has_col in has_cols) {
   }
 }
 n_repeat_amr_combined <- as.data.frame(rbindlist(n_repeat_amr_subsets, idcol = 'clinical condition'))
-n_repeat_amr_combined <- n_repeat_amr_combined %>% mutate(across(starts_with('sum_'), .fns = ~ ifelse(.x < small_count_threshold, NA, .x)))  # small count suppression
+n_repeat_amr_combined <- n_repeat_amr_combined %>% mutate(across(starts_with('sum_'), .fns = ~ ifelse(.x < small_count_threshold_prior_to_rounding, NA, .x))) %>% mutate(across(starts_with('sum_'), .fns = ~ round(.x/5) * 5))  # small count suppression followed by rounding to nearest 5
 write.csv(n_repeat_amr_combined, here::here("output", gsub("%s", cohort_date, "n_repeat_amr_%s.csv")), row.names = FALSE)
 
 # non-repeat
@@ -134,7 +135,7 @@ for (has_col in has_cols) {
   }
 }
 n_non_repeat_amr_combined <- as.data.frame(rbindlist(n_non_repeat_amr_subsets, idcol = 'clinical condition'))
-n_non_repeat_amr_combined <- n_non_repeat_amr_combined %>% mutate(across(starts_with('sum_'), .fns = ~ ifelse(.x < small_count_threshold, NA, .x)))  # small count suppression
+n_non_repeat_amr_combined <- n_non_repeat_amr_combined %>% mutate(across(starts_with('sum_'), .fns = ~ ifelse(.x < small_count_threshold_prior_to_rounding, NA, .x))) %>% mutate(across(starts_with('sum_'), .fns = ~ round(.x/5) * 5))  # small count suppression followed by rounding to nearest 5
 write.csv(n_non_repeat_amr_combined, here::here("output", gsub("%s", cohort_date, "n_non_repeat_amr_%s.csv")), row.names = FALSE)
 
 
@@ -174,6 +175,6 @@ imd_table <- f_tabulate_by(cohort_df %>% group_by(imd)) %>% rename('characterist
 # ethnicity
 ethnicity_table <- f_tabulate_by(cohort_df %>% group_by(ethnicity)) %>% rename('characteristic' = ethnicity)
 
-# combine tables and save
-demographics_table <- bind_rows(list('age_sex' = age_sex_table, 'region' = region_table, 'stp' = stp_table, 'care_home' = care_home_table, 'imd' = imd_table, 'ethnicity' = ethnicity_table), .id = "id")
+# combine tables and save (excluding counts by STP as per study policy: https://www.opensafely.org/policies-for-researchers/#permitted-study-results-policy)
+demographics_table <- bind_rows(list('age_sex' = age_sex_table, 'region' = region_table, 'care_home' = care_home_table, 'imd' = imd_table, 'ethnicity' = ethnicity_table), .id = "id")
 write.csv(demographics_table, here::here("output", gsub("%s", cohort_date, "demographics_table_%s.csv")), row.names = FALSE)

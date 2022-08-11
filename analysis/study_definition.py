@@ -194,7 +194,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -215,7 +215,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -224,7 +224,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -233,7 +233,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -242,7 +242,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -251,7 +251,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -260,7 +260,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -269,7 +269,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -278,7 +278,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -287,7 +287,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -296,7 +296,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -305,7 +305,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -314,7 +314,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -323,7 +323,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -333,7 +333,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -342,7 +342,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ), 
@@ -351,7 +351,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -360,7 +360,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -369,7 +369,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
@@ -378,7 +378,7 @@ study = StudyDefinition(
         between = ["index_date - 6 months", "index_date"],
         returning = "number_of_matches_in_period",
         return_expectations = {
-            "int": {"distribution": "normal", "mean": 2, "stddev": 1},
+            "int": {"distribution": "normal", "mean": 10, "stddev": 1},
             "incidence": 0.2,
         },
     ),
