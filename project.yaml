@@ -47,6 +47,39 @@ actions:
         n_non_repeat_amr_table: output/n_non_repeat_amr_2021-01-01.csv
         demographics_table: output/demographics_table_2021-01-01.csv
 
+  describe_cohort_demographics:
+    run: r:latest analysis/cohort_report_demographics.R
+    needs: [describe_precovid, describe_covid]
+    outputs:
+      moderately_sensitive:
+        forestplot_main_figure: output/plots/demographics_forestplot_main.png
+        forestplot_supplementary_figure: output/plots/demographics_forestplot_supplementary.png
+        forestplot_legend_figure:  output/plots/demographics_forestplot_legend.png
+        pct_change_combined_main: output/plots/demographics_pct_change_combined_main.png
+        pct_change_combined_supplementary: output/plots/demographics_pct_change_combined_supplementary.png
+        risk_ratios_repeat_table: output/tables/demographics_table_risk_ratios_clean_repeat.csv
+        risk_ratios_non_repeat_table: output/tables/demographics_table_risk_ratios_clean_non_repeat.csv
+        demographics_repeat_table: output/tables/demographics_table_clean_repeat.csv
+        demographics_non_repeat_table: output/tables/demographics_table_clean_non_repeat.csv
+
+  describe_cohort_clinical_conditions_amr_class:
+    run: r:latest analysis/cohort_report_clinical_conditions_amr_class.R
+    needs: [describe_precovid, describe_covid]
+    outputs:
+      moderately_sensitive:
+        clinical_conditions_figure: output/plots/clinical_conditions.png
+        clinical_conditions_pct_change_figure: output/plots/clinical_conditions_pct_change.png
+        clinical_conditions_combined_figure: output/plots/clinical_conditions_combined.png
+        amr_class_rel_freq_figure: output/plots/amr_class_rel_freq.png
+        amr_class_rate_figure: output/plots/amr_class_rate.png
+        amr_class_pct_change_figure: output/plots/amr_class_pct_change.png
+        amr_class_combined_figure: output/plots/amr_class_combined.png
+        amr_class_clinical_conditions_figure: output/plots/amr_class_clinical_conditions.png
+        amr_class_tetracyclines_clinical_conditions_figure: output/plots/amr_class_tetracyclines_clinical_conditions.png
+        amr_clinical_conditions_table: output/tables/amr_clinical_conditions.csv
+        amr_class_rate_table: output/tables/amr_class_rate.csv
+
+
   # generate measures
   generate_measure_populations:
     run: cohortextractor:latest generate_cohort --study-definition study_definition_measures --index-date-range "2020-01-01 to 2022-01-01 by month" --output-dir=output/measures
@@ -61,9 +94,13 @@ actions:
       moderately_sensitive:
         measure_csv: output/measures/measure_*.csv
 
+# analyse measures
   describe_measures:
     run: r:latest analysis/measures_report.R
     needs: [generate_measures]
     outputs:
       moderately_sensitive:
-        measures_figure: output/measures/measure_prescribing.png
+        prescribing_figure: output/measures/plots/measure_prescribing.png
+        change_prescribing_figure: output/measures/plots/measure_change_prescribing.png
+        prescribing_combined_figure: output/measures/plots/measure_change_prescribing_combined.png
+        max_change_table: output/measures/tables/max_percent_change.csv
