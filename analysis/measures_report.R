@@ -4,6 +4,9 @@ theme_set(theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.mino
 paired_blues <- c("#A6CEE3", "#1F78B4")  # light blue, dark blue
 paired_reds <- c("#FB9A99", "#E31A1C")  # light red, dark red
 
+dir.create(here::here("output/measures/tables"), showWarnings = FALSE)
+dir.create(here::here("output/measures/plots"), showWarnings = FALSE)
+
 ym_short_labeller <- function(x) {
   labels <- as.character(x)
   years <- lubridate::year(labels); months <- lubridate::month(labels, label = TRUE)

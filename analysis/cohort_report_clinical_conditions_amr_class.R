@@ -4,6 +4,9 @@ theme_set(theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.mino
 paired_blues <- c("#A6CEE3", "#1F78B4")  # light blue, dark blue
 paired_reds <- c("#FB9A99", "#E31A1C")  # light red, dark red
 
+dir.create(here::here("output/tables"), showWarnings = FALSE)
+dir.create(here::here("output/plots"), showWarnings = FALSE)
+
 # functions
 clinical_condition_labeller <- function(x) {
   x <- str_replace(x, 'has_comorbidity_cancer_immunosuppression', 'Cancer immunosuppression')
@@ -52,7 +55,7 @@ amr_df <- bind_rows(repeat_amr_2020, non_repeat_amr_2020, repeat_amr_2021, non_r
 amr_df <- amr_df %>% replace(is.na(.), 0)
 
 # save
-write.csv(amr_df, file = 'output/tables/amr_clinical_conditions.csv', row.names = FALSE)
+write.csv(amr_df, file = here::here('output/tables/amr_clinical_conditions.csv'), row.names = FALSE)
 
 
 # ---------------------------
@@ -302,8 +305,9 @@ p_class_cc <- p_class_cc +
     inherit.aes = FALSE
   )
 
-ggsave("amr_class_clinical_conditions.pdf", plot = p_class_cc, path = here::here("output/plots"), height = 12, width = 9)
 ggsave("amr_class_clinical_conditions.png", plot = p_class_cc, path = here::here("output/plots"), dpi = 600, height = 12, width = 9)
+ggsave("amr_class_clinical_conditions.pdf", plot = p_class_cc, path = here::here("output/plots"), height = 12, width = 9)
+
 
 
 # ---------------------------
@@ -326,6 +330,5 @@ p_class_tetracyclines_cc <- p_class_tetracyclines_cc +
     inherit.aes = FALSE
   )
 
-ggsave("amr_class_tetracyclines_clinical_conditions.pdf", plot = p_class_tetracyclines_cc, path = here::here("output/plots"), height = 10, width = 10)
 ggsave("amr_class_tetracyclines_clinical_conditions.png", plot = p_class_tetracyclines_cc, path = here::here("output/plots"), dpi = 600, height = 10, width = 10)
-
+ggsave("amr_class_tetracyclines_clinical_conditions.pdf", plot = p_class_tetracyclines_cc, path = here::here("output/plots"), height = 10, width = 10)

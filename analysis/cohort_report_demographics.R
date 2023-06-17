@@ -4,6 +4,9 @@ theme_set(theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.mino
 paired_blues <- c("#A6CEE3", "#1F78B4")  # light blue, dark blue
 paired_reds <- c("#FB9A99", "#E31A1C")  # light red, dark red
 
+dir.create(here::here("output/tables"), showWarnings = FALSE)
+dir.create(here::here("output/plots"), showWarnings = FALSE)
+
 # functions
 append_risk <- function(x) {
   # store characteristics
@@ -175,12 +178,12 @@ rr_df_combined <- rr_df_combined %>% group_by(prescribing_mode, variable, charac
 # ---------------------------
 # TABULAR OUTPUT
 # save table output (raw data)
-write.csv(rr_df_combined, file = 'output/tables/demographics_table_risk_ratios.csv', row.names = FALSE, na = '')
-#rr_df_combined <- read.csv('output/tables/demographics_table_risk_ratios.csv')
+write.csv(rr_df_combined, file = here::here('output/tables/demographics_table_risk_ratios.csv'), row.names = FALSE, na = '')
+#rr_df_combined <- read.csv(here::here('output/tables/demographics_table_risk_ratios.csv'))
 
 # save population totals, by year, prescribing mode, all/female/male
 demographic_summary_df <- rr_df_combined %>% filter(variable %in% c('age_female', 'age_male', 'care_home')) %>% group_by(year, prescribing_mode, variable) %>% summarise(n = sum(population), n_prescribed = sum(n_prescribed)) %>% arrange(prescribing_mode, year, variable) %>% mutate(strata = recode(variable, 'age_female' = 'female', 'age_male' = 'male', 'care_home' = 'all')) %>% select(-variable) %>% relocate(strata, .before = n) %>% mutate(n_neat = formatC(n, big.mark = ','), n_prescribed_neat = formatC(n_prescribed, big.mark = ','))
-write.csv(demographic_summary_df, file = 'output/tables/demographics_table_summary.csv', row.names = FALSE, na = '')
+write.csv(demographic_summary_df, file = here::here('output/tables/demographics_table_summary.csv'), row.names = FALSE, na = '')
 
 # ---------------------------
 # re-format for final repeat/non-repeat RR tables
@@ -201,7 +204,7 @@ rr_df_combined_clean_RR_repeat <- rr_df_combined_clean_RR_repeat %>%
 
 rr_df_combined_clean_RR_repeat_final <- table_1_format(rr_df_combined_clean_RR_repeat)
 
-write.csv(rr_df_combined_clean_RR_repeat_final, file = 'output/tables/demographics_table_risk_ratios_clean_repeat.csv', row.names = FALSE, na = '')
+write.csv(rr_df_combined_clean_RR_repeat_final, file = here::here('output/tables/demographics_table_risk_ratios_clean_repeat.csv'), row.names = FALSE, na = '')
 
 # output non-repeat
 rr_df_combined_clean_RR_non_repeat <- rr_df_combined_clean_RR %>% filter(prescribing_mode == 'non_repeat_amr')
@@ -216,7 +219,7 @@ rr_df_combined_clean_RR_non_repeat <- rr_df_combined_clean_RR_non_repeat %>%
 
 rr_df_combined_clean_RR_non_repeat_final <- table_1_format(rr_df_combined_clean_RR_non_repeat)
 
-write.csv(rr_df_combined_clean_RR_non_repeat_final, file = 'output/tables/demographics_table_risk_ratios_clean_non_repeat.csv', row.names = FALSE, na = '')
+write.csv(rr_df_combined_clean_RR_non_repeat_final, file = here::here('output/tables/demographics_table_risk_ratios_clean_non_repeat.csv'), row.names = FALSE, na = '')
 
 
 # ---------------------------
@@ -248,7 +251,7 @@ rr_df_combined_clean_repeat <- rr_df_combined_clean_repeat %>% select(-c(year_20
 
 rr_df_combined_clean_repeat_final <- table_1_format(rr_df_combined_clean_repeat)
 
-write.csv(rr_df_combined_clean_repeat_final, file = 'output/tables/demographics_table_clean_repeat.csv', row.names = FALSE, na = '')
+write.csv(rr_df_combined_clean_repeat_final, file = here::here('output/tables/demographics_table_clean_repeat.csv'), row.names = FALSE, na = '')
 
 # output non-repeat
 rr_df_combined_clean_non_repeat <- rr_df_combined_clean %>% filter(prescribing_mode == 'non_repeat_amr')
@@ -257,7 +260,7 @@ rr_df_combined_clean_non_repeat <- rr_df_combined_clean_non_repeat %>% select(-c
 
 rr_df_combined_clean_non_repeat_final <- table_1_format(rr_df_combined_clean_non_repeat)
 
-write.csv(rr_df_combined_clean_non_repeat_final, file = 'output/tables/demographics_table_clean_non_repeat.csv', row.names = FALSE, na = '')
+write.csv(rr_df_combined_clean_non_repeat_final, file = here::here('output/tables/demographics_table_clean_non_repeat.csv'), row.names = FALSE, na = '')
 
 
 # ---------------------------
@@ -295,10 +298,10 @@ p1 <- p1_out$plot
 p2 <- suppressWarnings(plot_forest(rr_df_combined_forest_wide_set2))$plot
 p2$widths <- p1_out$widths
 
-ggsave("output/plots/demographics_forestplot_main.png", plot = p1, dpi = 600, width = 13, height = 14)
-ggsave("output/plots/demographics_forestplot_supplementary.png", plot = p2, dpi = 600, width = 13, height = 7)
-ggsave("output/plots/demographics_forestplot_main.pdf", plot = p1, width = 13, height = 14)
-ggsave("output/plots/demographics_forestplot_supplementary.pdf", plot = p2, width = 13, height = 7)
+ggsave("output/plots/demographics_forestplot_main.png", plot = p1, path = here::here("output/plots"), dpi = 600, width = 13, height = 14)
+ggsave("output/plots/demographics_forestplot_supplementary.png", plot = p2, path = here::here("output/plots"), dpi = 600, width = 13, height = 7)
+ggsave("output/plots/demographics_forestplot_main.pdf", plot = p1, path = here::here("output/plots"), width = 13, height = 14)
+ggsave("output/plots/demographics_forestplot_supplementary.pdf", plot = p2, path = here::here("output/plots"), width = 13, height = 7)
 
 # make ggplot legend (option to manually replace default forestploter legend)
 p_legend_plot <- ggplot(rr_df_combined_forest %>% filter(variable == "Age (female patients)"), aes(x = characteristic, y = log_estimate, colour = `Patient group`, fill = `Patient group`, shape = `Patient group`)) + geom_point() +
@@ -307,8 +310,8 @@ p_legend_plot <- ggplot(rr_df_combined_forest %>% filter(variable == "Age (femal
   scale_shape_manual(values = c(23, 23, 21, 21)) +
   guides(fill = guide_legend(nrow = 2, byrow = TRUE), colour = guide_legend(nrow = 2, byrow = TRUE)) + theme(legend.position = "top", legend.title = element_text(size = 15), legend.text = element_text(size = 13))
 p_legend <- get_legend(p_legend_plot)
-ggsave("output/plots/demographics_forestplot_legend.png", plot = p_legend, dpi = 600, width = 8, height = 2)
-ggsave("output/plots/demographics_forestplot_legend.pdf", plot = p_legend, width = 8, height = 2)
+ggsave("output/plots/demographics_forestplot_legend.png", plot = p_legend, path = here::here("output/plots"), dpi = 600, width = 8, height = 2)
+ggsave("output/plots/demographics_forestplot_legend.pdf", plot = p_legend, path = here::here("output/plots"), width = 8, height = 2)
 
 # ---------------------------
 # plot percent change for repeat and non repeat in Jan 2021 cohort vs Jan 2020
@@ -407,7 +410,7 @@ B
 p_combined_set2 <- wrap_plots(plotlist_set2) + plot_annotation(tag_levels = NULL) + plot_layout(ncol = 1, widths = c(1,1), byrow = FALSE, design = layout, guides = 'collect') & theme(legend.position = 'top') & guides(colour=guide_legend(nrow=2,byrow=TRUE))
 
 
-ggsave("output/plots/demographics_pct_change_combined_main.png", plot = p_combined_set1, dpi = 600, width = 6, height = 9)
-ggsave("output/plots/demographics_pct_change_combined_supplementary.png", plot = p_combined_set2, dpi = 600, width = 6, height = 4.5)
-ggsave("output/plots/demographics_pct_change_combined_main.pdf", plot = p_combined_set1, width = 6, height = 9)
-ggsave("output/plots/demographics_pct_change_combined_supplementary.pdf", plot = p_combined_set2, width = 6, height = 4.5)
+ggsave("output/plots/demographics_pct_change_combined_main.png", plot = p_combined_set1, path = here::here("output/plots"), dpi = 600, width = 6, height = 9)
+ggsave("output/plots/demographics_pct_change_combined_supplementary.png", plot = p_combined_set2, path = here::here("output/plots"), dpi = 600, width = 6, height = 4.5)
+ggsave("output/plots/demographics_pct_change_combined_main.pdf", plot = p_combined_set1, path = here::here("output/plots"), width = 6, height = 9)
+ggsave("output/plots/demographics_pct_change_combined_supplementary.pdf", plot = p_combined_set2, path = here::here("output/plots"), width = 6, height = 4.5)
